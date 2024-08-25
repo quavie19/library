@@ -17,17 +17,29 @@
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand">Library</a>
-        <button class="btn btn-outline-primary" type="submit">Log In</button>
+        <button id="log-in" class="btn btn-outline-primary" type="submit">
+          Log In
+        </button>
       </div>
     </nav>
     <section id="book-section">
       <div class="container-fluid">
         <div class="d-flex justify-content-center">
-          <button class="btn btn-secondary">Add Book</button>
+          <button
+            onclick="displayForm()"
+            id="add-book"
+            class="btn btn-secondary"
+          >
+            Add Book
+          </button>
         </div>
         <!-- Form To Import Add Book  -->
         <div class="d-flex justify-content-center">
-          <div class="card text-center" style="width: 18rem; display: none">
+          <div
+            id="input-form"
+            class="card text-center"
+            style="width: 18rem; display: none"
+          >
             <div class="card-body">
               <h5 class="card-title">Add New Book</h5>
               <form>
@@ -60,19 +72,29 @@
                   <input
                     type="checkbox"
                     class="form-check-input"
-                    id="exampleCheck1"
+                    id="checkbox"
                   />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button
+                  id="submit"
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="inputBook(event)"
+                >
+                  Submit
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
       <!-- BOOK GRID  -->
-      <!-- <div class="container-fluid text-center">
-        <div class="row row-cols-3 d-flex justify-content-between column-gap-3">
-          <div class="col card" style="width: 25rem">
+      <div id="book-grid" class="container-fluid text-center">
+        <div
+          id="card-grid"
+          class="row row-cols-3 d-flex justify-content-between column-gap-3"
+        >
+          <!-- <div class="col card" style="width: 25rem">
             <div class="card-body">
               <h5 class="card-title">Book Title</h5>
               <h5 class="card-title">Author</h5>
@@ -147,15 +169,15 @@
                 Remove
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
-      </div> -->
+      </div>
     </section>
-    <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

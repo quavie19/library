@@ -1,9 +1,85 @@
-const myLibrary = [];
+const addBookBtn = document.getElementById('add-book');
+const inputForm = document.getElementById('input-form');
 
-function Book() {
-  // the constructor...
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const checkBox = document.getElementById('checkbox')
+const submitBtn = document.getElementById('submit')
+
+
+
+function displayForm() {
+    inputForm.style.display = "block";
+    addBookBtn.disabled = 'true';
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function inputBook(event) {
+    event.preventDefault();
+    console.log("inputBook function called"); 
+
+    const inputTitle = title.value.trim();
+    const inputAuthor = author.value.trim();
+    const inputPages = pages.value.trim(); 
+    
+
+    if (inputTitle && inputAuthor && inputPages) {
+
+            const cardGrid = document.getElementById('card-grid');
+                
+
+            const card = document.createElement('div');
+            const cardBody = document.createElement('div');
+            const cardTitle = document.createElement('h5');
+            const cardAuthor = document.createElement('h5');
+            const cardPages = document.createElement('h5');
+            const hasReadBtn = document.createElement('button');
+            const removeBtn = document.createElement('button');
+
+            cardTitle.textContent = `${inputTitle} `;
+            cardAuthor.textContent = `${inputAuthor} `;
+            cardPages.textContent = `${inputPages} `;
+
+            if (checkBox.checked) {
+                hasReadBtn.classList.add('btn', 'btn-success', 'd-block', 'card-btn');
+                hasReadBtn.textContent = 'read';
+            }
+            else {
+                hasReadBtn.classList.add('btn', 'btn-danger', 'd-block', 'card-btn');
+                hasReadBtn.textContent = 'not read';
+            }
+            hasReadBtn.style.width = '100%';
+
+            removeBtn.classList.add('btn', 'btn-primary', 'd-block', 'card-btn');
+            removeBtn.style.width = '100%';
+            removeBtn.textContent = 'Remove';
+        
+
+            card.classList.add('col', 'card')
+            card.style.width = '25rem'
+
+
+        cardBody.append(cardTitle, cardAuthor, cardPages, hasReadBtn, removeBtn);
+            card.append(cardBody);
+
+           
+        cardGrid.append(card);
+        
+        // Optionally reset the form fields
+        title.value = '';
+        author.value = '';
+        pages.value = '';
+        checkBox.checked = false;
+
+        // Hide the form again and enable the "Add Book" button
+        inputForm.style.display = "none";
+        addBookBtn.disabled = false;
+
+        console.log("Book added to the grid"); // Debugging line
+    } else {
+        console.log("Form fields are incomplete"); 
+
+        
+    }
+
 }
