@@ -45,3 +45,8 @@ dialog {
     justify-items: center;
     text-align: center;
 }
+
+.cards{
+
+    margin: 10px;
+}

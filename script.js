@@ -35,9 +35,15 @@ function inputBook(event) {
             const hasReadBtn = document.createElement('button');
             const removeBtn = document.createElement('button');
 
-            cardTitle.textContent = `${inputTitle} `;
-            cardAuthor.textContent = `${inputAuthor} `;
-            cardPages.textContent = `${inputPages} `;
+        cardTitle.textContent = `${inputTitle} `;
+        cardTitle.classList.add('card-title');
+
+        cardAuthor.textContent = `${inputAuthor} `;
+        cardAuthor.classList.add('card-title');
+
+        cardPages.textContent = `${inputPages} `; 
+        cardPages.classList.add('card-title');
+        
 
             if (checkBox.checked) {
                 hasReadBtn.classList.add('btn', 'btn-success', 'd-block', 'card-btn');
@@ -57,7 +63,7 @@ function inputBook(event) {
         card.classList.add('card');
         card.style.width = '25rem';
 
-
+        cardBody.classList.add('cards');
         cardBody.append(cardTitle, cardAuthor, cardPages, hasReadBtn, removeBtn);
             card.append(cardBody);
 
