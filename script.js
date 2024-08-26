@@ -13,6 +13,12 @@ function displayForm() {
     favDialog.showModal();
 }
 
+// ensures only numbers can be entered for pages value 
+pages.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+
 function inputBook(event) {
     event.preventDefault();
     console.log("inputBook function called"); 
