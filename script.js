@@ -90,13 +90,16 @@ function inputBook(event) {
     // toggle buttton for user read or not read 
     hasReadBtn.addEventListener('click', () => {
     if (hasReadBtn.textContent === 'Read') {
-        hasReadBtn.style.backgroundColor = 'red';
+        hasReadBtn.classList.remove('btn-success');
+        hasReadBtn.classList.add('btn-danger');
         hasReadBtn.textContent = 'Not Read';
     } else {
-        hasReadBtn.style.backgroundColor = 'green';
+        hasReadBtn.classList.remove('btn-danger');
+        hasReadBtn.classList.add('btn-success');
         hasReadBtn.textContent = 'Read';
     }
-    });
+});
+
      
         // remove button event listener 
         removeBtn.addEventListener('click', () => {
