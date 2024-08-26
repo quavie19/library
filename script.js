@@ -76,15 +76,16 @@ function inputBook(event) {
            
         cardGrid.append(card);
 
-        
-        // reset the form fields
-        title.value = '';
-        author.value = '';
-        pages.value = '';
-        checkBox.checked = false;
 
         // to close modal after form submitted 
         favDialog.close()
+    // Reset form fields when dialog is closed
+    favDialog.addEventListener('close', () => {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    checkBox.checked = false;
+});
 
 
     // toggle buttton for user read or not read 
@@ -107,5 +108,8 @@ function inputBook(event) {
         })
         
     }
-
+    else {
+        alert("Please fill in all fields.");
+        return;
+    }
 }
