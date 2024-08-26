@@ -65,10 +65,11 @@ function inputBook(event) {
 
         cardBody.classList.add('cards');
         cardBody.append(cardTitle, cardAuthor, cardPages, hasReadBtn, removeBtn);
-            card.append(cardBody);
+        card.append(cardBody);
 
            
         cardGrid.append(card);
+
         
         // Optionally reset the form fields
         title.value = '';
@@ -77,6 +78,11 @@ function inputBook(event) {
         checkBox.checked = false;
 
         favDialog.close()
+
+        removeBtn.addEventListener('click', () => {
+            card.remove();
+        })
+        
     }
 
 }
