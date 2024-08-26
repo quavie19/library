@@ -47,11 +47,11 @@ function inputBook(event) {
 
             if (checkBox.checked) {
                 hasReadBtn.classList.add('btn', 'btn-success', 'd-block', 'card-btn');
-                hasReadBtn.textContent = 'read';
+                hasReadBtn.textContent = 'Read';
             }
             else {
                 hasReadBtn.classList.add('btn', 'btn-danger', 'd-block', 'card-btn');
-                hasReadBtn.textContent = 'not read';
+                hasReadBtn.textContent = 'Not read';
             }
             hasReadBtn.style.width = '100%';
 
@@ -71,14 +71,28 @@ function inputBook(event) {
         cardGrid.append(card);
 
         
-        // Optionally reset the form fields
+        // reset the form fields
         title.value = '';
         author.value = '';
         pages.value = '';
         checkBox.checked = false;
 
+        // to close modal after form submitted 
         favDialog.close()
 
+
+    // toggle buttton for user read or not read 
+    hasReadBtn.addEventListener('click', () => {
+    if (hasReadBtn.textContent === 'Read') {
+        hasReadBtn.style.backgroundColor = 'red';
+        hasReadBtn.textContent = 'Not Read';
+    } else {
+        hasReadBtn.style.backgroundColor = 'green';
+        hasReadBtn.textContent = 'Read';
+    }
+    });
+     
+        // remove button event listener 
         removeBtn.addEventListener('click', () => {
             card.remove();
         })
