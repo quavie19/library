@@ -6,12 +6,11 @@ const author = document.getElementById('author');
 const pages = document.getElementById('pages');
 const checkBox = document.getElementById('checkbox')
 const submitBtn = document.getElementById('submit')
-
+const favDialog = document.getElementById("favDialog");
 
 
 function displayForm() {
-    inputForm.style.display = "block";
-    addBookBtn.disabled = 'true';
+    favDialog.showModal();
 }
 
 function inputBook(event) {
@@ -25,7 +24,7 @@ function inputBook(event) {
 
     if (inputTitle && inputAuthor && inputPages) {
 
-            const cardGrid = document.getElementById('card-grid');
+            const cardGrid = document.getElementById('book-grid');
                 
 
             const card = document.createElement('div');
@@ -55,8 +54,8 @@ function inputBook(event) {
             removeBtn.textContent = 'Remove';
         
 
-            card.classList.add('col', 'card')
-            card.style.width = '25rem'
+        card.classList.add('card');
+        card.style.width = '25rem';
 
 
         cardBody.append(cardTitle, cardAuthor, cardPages, hasReadBtn, removeBtn);
@@ -71,15 +70,7 @@ function inputBook(event) {
         pages.value = '';
         checkBox.checked = false;
 
-        // Hide the form again and enable the "Add Book" button
-        inputForm.style.display = "none";
-        addBookBtn.disabled = false;
-
-        console.log("Book added to the grid"); // Debugging line
-    } else {
-        console.log("Form fields are incomplete"); 
-
-        
+        favDialog.close()
     }
 
 }

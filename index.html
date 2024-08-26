@@ -35,66 +35,61 @@
         </div>
         <!-- Form To Import Add Book  -->
         <div class="d-flex justify-content-center">
-          <div
-            id="input-form"
-            class="card text-center"
-            style="width: 18rem; display: none"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Add New Book</h5>
-              <form>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="title"
-                    placeholder="Title"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="author"
-                    placeholder="Author"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="pages"
-                    placeholder="Pages"
-                  />
-                </div>
-                <div class="mb-3 form-check">
-                  <label class="form-check-label">Have You Read It?</label>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="checkbox"
-                  />
-                </div>
-                <button
-                  id="submit"
-                  type="submit"
-                  class="btn btn-primary"
-                  onclick="inputBook(event)"
-                >
-                  Submit
-                </button>
-              </form>
+          <dialog id="favDialog">
+            <div id="input-form" class="card text-center" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Add New Book</h5>
+                <form>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="author"
+                      placeholder="Author"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pages"
+                      placeholder="Pages"
+                    />
+                  </div>
+                  <div class="mb-3 form-check">
+                    <label class="form-check-label">Have You Read It?</label>
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="checkbox"
+                    />
+                  </div>
+                  <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="inputBook(event)"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+          </dialog>
         </div>
       </div>
       <!-- BOOK GRID  -->
       <div id="book-grid" class="container-fluid text-center">
-        <div
-          id="card-grid"
-          class="row row-cols-3 d-flex justify-content-between column-gap-3"
-        >
-          <!-- <div class="col card" style="width: 25rem">
+        <!-- <div id="card-grid" class="row row-cols-3 d-flex align-content-center"> -->
+        <!-- <div class="col card" style="width: 25rem">
             <div class="card-body">
               <h5 class="card-title">Book Title</h5>
               <h5 class="card-title">Author</h5>
@@ -170,8 +165,8 @@
               </button>
             </div>
           </div> -->
-        </div>
       </div>
+      <!-- </div> -->
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
